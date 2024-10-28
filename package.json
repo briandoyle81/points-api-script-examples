@@ -1,0 +1,16 @@
+{
+  "name": "simple-sign-script",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node script.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ethers": "^6.13.4",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "uuid": "^11.0.2"
+  }
+}
