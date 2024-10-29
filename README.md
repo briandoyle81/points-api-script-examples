@@ -64,6 +64,10 @@ User Points for 0xa4Fe9176f54808a54362b1569D3FA0dba7D4F59c: {
 
 Handles the process of obtaining an authentication token.  Tokens **expire** after 24 hours.
 
+**Warning**: The "Create Challenge" endpoint will return a challenge string for any supplied address.  You'll receive an error that the `Challenge not found or expired` if you submit a signed response correctly for an address that isn't registered.
+
+Contact `partnerships@flow.com` if you need to add or change your address.
+
 ## createPointsTransferBatch.js
 
 As a partner, you most likely receive **either** _boxes_ **or** _keys_.  The same API endpoint is used to create a batch of transfer requests for either type of reward.
