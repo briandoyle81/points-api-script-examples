@@ -11,6 +11,7 @@
     "node-fetch": "^3.3.2"
   },
   "devDependencies": {
+    "@onflow/fcl": "^1.12.3",
     "uuid": "^11.0.2"
   }
 }

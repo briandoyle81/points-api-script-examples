@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 
 // API URL for the points transfer batch
-const apiURL = 'https://crescendo-rewards-cxc3jxjjdq-uc.a.run.app';
+const apiURL = process.env.API_URL;
 const createTransferBatchURL = `${apiURL}/points/dapp/transfer/batch`;
 
 // Debug variable for the seconds to finalize
@@ -15,7 +15,7 @@ async function createPointsTransferBatch(jwt, batchId, transfers) {
   try {
     // Prepare the request body
     const requestBody = {
-      batchId, // Optional idempotency key
+      batchId, // Optional (but recommended) idempotency key
       transfers, // Array of transfers
       secondsToFinalize // Time to finalize
     };
@@ -50,13 +50,14 @@ async function executeBatchTransfer() {
   try {
     // Get the JWT from the get-JWT.js script
     // IMPORTANT: Tokens are valid for 24 hours.  You don't need to get one every call.
-    const jwt = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjoiMHhhNGZlOTE3NmY1NDgwOGE1NDM2MmIxNTY5ZDNmYTBkYmE3ZDRmNTljIiwicm9sZSI6IkRBUFAiLCJpYXQiOjE3MzAxMzk4OTAsImV4cCI6MTczMDIyNjI5MH0.myH9eXQCxlo1svFA-UhZaslDsQgmGE8Yl412Fx_Wp0s';
+    const jwt = '<VALID JWT>';
 
     // Define batchId and transfers
+    // Note: Best practice is to add several transfers in the array
     const batchId = uuidv4(); // Optional
     const transfers = [
       {
-        toAddressId: "0xfeb88a0fcc175a3d", // Example recipient address
+        toAddressId: process.env.PUBLIC_RECIPIENT_ETH_ADDRESS, // Example recipient Ethereum address
         keys: "1", // Number of keys to transfer
         boxes: "1"  // Number of boxes to transfer
       }

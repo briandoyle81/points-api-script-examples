@@ -35,11 +35,11 @@ async function getTransferBatchById(jwt, batchId) {
 // Example usage
 async function executeGetTransferBatch() {
   try {
-    // Get the JWT from the get-JWT.js script or use the cached token
-    const jwt = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjoiMHhhNGZlOTE3NmY1NDgwOGE1NDM2MmIxNTY5ZDNmYTBkYmE3ZDRmNTljIiwicm9sZSI6IkRBUFAiLCJpYXQiOjE3MzAxMzk4OTAsImV4cCI6MTczMDIyNjI5MH0.myH9eXQCxlo1svFA-UhZaslDsQgmGE8Yl412Fx_Wp0s';
+    // Get the JWT from the getJWT.js script or use a cached token
+    const jwt = '<VALID JWT>';
 
     // Define the batchId for the transfer batch you want to retrieve
-    const batchId = 'c6e77edb-976f-4340-bd63-9e54a8848a52'; // Example batchId
+    const batchId = '<VALID BATCH ID>'; // Example batchId
 
     // Call the function to retrieve the transfer batch by ID
     await getTransferBatchById(jwt, batchId);

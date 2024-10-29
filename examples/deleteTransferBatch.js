@@ -40,10 +40,10 @@ async function deleteTransferBatchById(jwt, batchId) {
 async function executeDeleteTransferBatch() {
   try {
     // Get the JWT from the get-JWT.js script or use the cached token
-    const jwt = 'Valid JWT Token'; // Replace with your valid JWT token
+    const jwt = '<VALID JWT>'; // Replace with your valid JWT token
 
     // Define the batchId for the transfer batch you want to cancel
-    const batchId = 'dbab88d1-2358-4f3c-a5cb-a37bc998c2b2'; // Example batchId
+    const batchId = '<BATCH ID>'; // Example batchId
 
     // Call the function to delete the transfer batch by ID
     await deleteTransferBatchById(jwt, batchId);

@@ -33,8 +33,8 @@ async function getAllTransferBatches(jwt) {
 // Example usage
 async function executeGetAllTransferBatches() {
   try {
-    // Get the JWT from the get-JWT.js script or use the cached token
-    const jwt = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjoiMHhhNGZlOTE3NmY1NDgwOGE1NDM2MmIxNTY5ZDNmYTBkYmE3ZDRmNTljIiwicm9sZSI6IkRBUFAiLCJpYXQiOjE3MzAxMzk4OTAsImV4cCI6MTczMDIyNjI5MH0.myH9eXQCxlo1svFA-UhZaslDsQgmGE8Yl412Fx_Wp0s';
+    // Get the JWT from the getJWT.js script or use a cached token
+    const jwt = '<VALID JWT>';
 
     // Call the function to retrieve all transfer batches
     await getAllTransferBatches(jwt);

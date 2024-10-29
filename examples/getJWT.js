@@ -2,7 +2,7 @@ import 'dotenv/config'; // Load environment variables from .env
 import { Wallet } from 'ethers';
 import fetch from 'node-fetch'; // You may need to install node-fetch
 
-const apiURL = 'https://crescendo-rewards-cxc3jxjjdq-uc.a.run.app';
+const apiURL = process.env.API_URL;
 const createChallengeURL = `${apiURL}/points/dapp/challenge`;
 const solveChallengeURL = `${apiURL}/points/dapp/solve`;
 
@@ -65,10 +65,10 @@ export default async function getJWT() {
   }
 }
 
-// Start the challenge process
-getJWT();
+// Start the challenge process.  Tokens expire after 24 hours
+const authToken = getJWT();
 
 // Sample Response
 // Challenge solved successfully: {
-//   token: 'eyJhbGciOiJ\KIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRzZXNzIjoiMHhhAGZlOTE3NmA1NDgwOGE1NDM2MmIxNTY5ZDNmYTBkYmE3ZDRmNTljIiwicm9sZSI6IkRBUFAiLCJpYXQiOjE3MzAxNDEzNTMsImV4cCI6MTczMDIyNzc1M30.gBMLTMR-gr8b3nH6XPoQAKqNwsNbKfy8f_LwTVzVJhY'
+//   token: 'eyJhbGciOiJ\KIUzI1ZiIsInR5cCI6IkpXVCJ9.eyJhZGRzZXNzIjoiMHhhAGZlOTE3NmA1NDgwOGE1NDM2MmIxNTY5ZDNmYTBkYmE3ZDRmNTljIiwicm9sZSI6IkRBUFAiLCJpYXQiOjE3MzAxNDEzNTMsImV4cCI6MTczMDIyNzc1M30.gBMLTMR-gr8b3nH6XPoQAKqNwsNbKfy8f_LwTVzVJhY'
 // }
