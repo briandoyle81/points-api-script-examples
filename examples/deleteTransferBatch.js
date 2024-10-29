@@ -1,58 +1,60 @@
-import 'dotenv/config'; // Load environment variables from .env
-import fetch from 'node-fetch'; // Ensure node-fetch is installed
+// This script is not working.  Please stay tuned for an update.
 
-// API URL for the points transfer batch
-const apiURL = 'https://crescendo-rewards-cxc3jxjjdq-uc.a.run.app';
-const deleteTransferBatchURL = `${apiURL}/points/dapp/transfer/batch`;
+// import 'dotenv/config'; // Load environment variables from .env
+// import fetch from 'node-fetch'; // Ensure node-fetch is installed
 
-// Function to delete transfer batch by ID
-async function deleteTransferBatchById(jwt, batchId) {
-  try {
-    // Make the DELETE request to cancel the transfer batch by ID
-    const response = await fetch(`${deleteTransferBatchURL}/${batchId}`, {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authentication': `Bearer ${jwt}` // Include JWT in the authorization header
-      }
-    });
+// // API URL for the points transfer batch
+// const apiURL = 'https://crescendo-rewards-cxc3jxjjdq-uc.a.run.app';
+// const deleteTransferBatchURL = `${apiURL}/points/dapp/transfer/batch`;
 
-    // Handle the response
-    if (response.ok) {
-      const data = await response.json();
-      console.log('Transfer Batch Cancelled Successfully:', data.message);
-    } else if (response.status === 404) {
-      const errorData = await response.json();
-      console.error('Error 404 - Not Found:', errorData.error);
-    } else if (response.status === 400) {
-      console.log(response);
-      const errorData = await response.json();
-      console.error('Error 400 - Bad Request:', errorData.error);
-    } else {
-      console.error('Unexpected error:', response.status, response.statusText);
-    }
-  } catch (error) {
-    console.error('Error cancelling transfer batch:', error);
-  }
-}
+// // Function to delete transfer batch by ID
+// async function deleteTransferBatchById(jwt, batchId) {
+//   try {
+//     // Make the DELETE request to cancel the transfer batch by ID
+//     const response = await fetch(`${deleteTransferBatchURL}/${batchId}`, {
+//       method: 'DELETE',
+//       headers: {
+//         'Content-Type': 'application/json',
+//         'Authentication': `Bearer ${jwt}` // Include JWT in the authorization header
+//       }
+//     });
 
-// Example usage
-async function executeDeleteTransferBatch() {
-  try {
-    // Get the JWT from the get-JWT.js script or use the cached token
-    const jwt = '<VALID JWT>'; // Replace with your valid JWT token
+//     // Handle the response
+//     if (response.ok) {
+//       const data = await response.json();
+//       console.log('Transfer Batch Cancelled Successfully:', data.message);
+//     } else if (response.status === 404) {
+//       const errorData = await response.json();
+//       console.error('Error 404 - Not Found:', errorData.error);
+//     } else if (response.status === 400) {
+//       console.log(response);
+//       const errorData = await response.json();
+//       console.error('Error 400 - Bad Request:', errorData.error);
+//     } else {
+//       console.error('Unexpected error:', response.status, response.statusText);
+//     }
+//   } catch (error) {
+//     console.error('Error cancelling transfer batch:', error);
+//   }
+// }
 
-    // Define the batchId for the transfer batch you want to cancel
-    const batchId = '<BATCH ID>'; // Example batchId
+// // Example usage
+// async function executeDeleteTransferBatch() {
+//   try {
+//     // Get the JWT from the get-JWT.js script or use the cached token
+//     const jwt = '<VALID JWT>'; // Replace with your valid JWT token
 
-    // Call the function to delete the transfer batch by ID
-    await deleteTransferBatchById(jwt, batchId);
-  } catch (error) {
-    console.error('Error during delete transfer batch execution:', error);
-  }
-}
+//     // Define the batchId for the transfer batch you want to cancel
+//     const batchId = '<BATCH ID>'; // Example batchId
 
-// Run the example
-executeDeleteTransferBatch();
+//     // Call the function to delete the transfer batch by ID
+//     await deleteTransferBatchById(jwt, batchId);
+//   } catch (error) {
+//     console.error('Error during delete transfer batch execution:', error);
+//   }
+// }
 
-// 
+// // Run the example
+// executeDeleteTransferBatch();
+
+// // 
