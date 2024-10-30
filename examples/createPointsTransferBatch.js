@@ -50,7 +50,8 @@ async function executeBatchTransfer() {
   try {
     // Get the JWT from the get-JWT.js script
     // IMPORTANT: Tokens are valid for 24 hours.  You don't need to get one every call.
-    const jwt = '<VALID JWT>';
+    // Note:  You likely **don't** want your JWT in an envar.  This is for testing convenience.
+    const jwt = process.env.VALID_JWT;
 
     // Define batchId and transfers
     // Note: Best practice is to add several transfers in the array

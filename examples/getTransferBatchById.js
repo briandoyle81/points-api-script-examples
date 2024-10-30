@@ -36,7 +36,8 @@ async function getTransferBatchById(jwt, batchId) {
 async function executeGetTransferBatch() {
   try {
     // Get the JWT from the getJWT.js script or use a cached token
-    const jwt = '<VALID JWT>';
+    // Note:  You likely **don't** want your JWT in an envar.  This is for testing convenience.
+    const jwt = process.env.VALID_JWT;
 
     // Define the batchId for the transfer batch you want to retrieve
     const batchId = '<VALID BATCH ID>'; // Example batchId

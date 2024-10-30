@@ -34,7 +34,8 @@ async function getAllTransferBatches(jwt) {
 async function executeGetAllTransferBatches() {
   try {
     // Get the JWT from the getJWT.js script or use a cached token
-    const jwt = '<VALID JWT>';
+    // Note:  You likely **don't** want your JWT in an envar.  This is for testing convenience.
+    const jwt = process.env.VALID_JWT;
 
     // Call the function to retrieve all transfer batches
     await getAllTransferBatches(jwt);
